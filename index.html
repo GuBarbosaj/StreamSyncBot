@@ -6,66 +6,121 @@
     <title>StreamSync - Termos de Uso e Pagamento</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
+            color: #333;
         }
         header {
             background-color: #6a4c9c;
             color: white;
-            padding: 20px;
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-size: 2em;
+        header h1 {
+            font-size: 2.5em;
             margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         section {
-            padding: 20px;
+            padding: 40px 20px;
             background-color: white;
-            margin: 20px;
-            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .terms {
             background-color: #fafafa;
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 20px;
             border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         .terms h2 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #6a4c9c;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
         .terms p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
         .terms ol {
             padding-left: 20px;
+            margin-top: 20px;
+        }
+        .terms li {
+            margin-bottom: 15px;
         }
         .button-container {
             text-align: center;
+            margin-top: 20px;
         }
         .button-container a {
             display: inline-block;
             padding: 15px 30px;
-            margin: 10px;
+            margin: 15px;
             background-color: #6a4c9c;
             color: white;
             text-decoration: none;
             font-size: 1.2em;
             border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .button-container a:hover {
             background-color: #5a3e8a;
+            transform: scale(1.05);
+        }
+        .accept-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .accept-container input {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+        }
+        .accept-container button {
+            padding: 10px 30px;
+            font-size: 1.2em;
+            background-color: #6a4c9c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .accept-container button:hover {
+            background-color: #5a3e8a;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #6a4c9c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1em;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>StreamSync - Termos de Uso e Pagamento</h1>
+        <h1>StreamSync</h1>
+        <p>Automação para sua conta Telegram</p>
     </header>
 
     <section>
@@ -104,12 +159,17 @@
             <a href="https://www.exemplo.com/pix/69.90" target="_blank">Plano Trimestral (R$69,90)</a>
         </div>
 
-        <div class="button-container">
+        <div class="accept-container">
             <p><strong>Digite "EU ACEITO" para continuar:</strong></p>
             <input type="text" id="acceptInput" placeholder="Digite 'EU ACEITO'">
             <button onclick="checkAcceptance()">Continuar</button>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2025 StreamSync. Todos os direitos reservados.</p>
+        <p>Para mais informações, consulte nossa <a href="#">Política de Privacidade</a> e <a href="#">Termos de Serviço</a>.</p>
+    </footer>
 
     <script>
         function checkAcceptance() {
