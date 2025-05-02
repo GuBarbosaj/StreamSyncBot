@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamSync - Termos de Uso e Pagamento</title>
+    <title>StreamSync - Automação Telegram Fácil e Rápida</title>
     <style>
+            .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 16px; /* Espaço entre os botões */
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .button-container button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #6a4c9c;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        min-width: 180px;
+    }
+
+    .button-container button:disabled {
+        background-color: #a48bd0;
+        cursor: not-allowed;
+    }
+
+    .button-container button:hover:not(:disabled) {
+        background-color: #593e84;
+        transform: scale(1.05);
+    }
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             color: #333;
@@ -15,15 +44,20 @@
         header {
             background-color: #6a4c9c;
             color: white;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 500;
         }
         section {
             padding: 40px 20px;
@@ -33,6 +67,21 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+        .intro-text {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .intro-text h2 {
+            font-size: 2.5em;
+            color: #6a4c9c;
+            font-weight: 600;
+        }
+        .intro-text p {
+            font-size: 1.1em;
+            margin-top: 10px;
+            line-height: 1.8;
+            color: #555;
+        }
         .terms {
             background-color: #fafafa;
             padding: 20px;
@@ -41,7 +90,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         .terms h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #6a4c9c;
             margin-bottom: 20px;
             font-weight: 600;
@@ -59,36 +108,42 @@
         }
         .button-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
-        .button-container a {
+        .button-container a,
+        .button-container button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 20px 50px;
             margin: 15px;
             background-color: #6a4c9c;
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 8px;
+            font-size: 1.6em;
+            border-radius: 10px;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 700;
+            text-align: center;
         }
-        .button-container a:hover {
+        .button-container a:hover,
+        .button-container button:hover {
             background-color: #5a3e8a;
             transform: scale(1.05);
+        }
+        .button-container button {
+            cursor: pointer;
         }
         .accept-container {
             text-align: center;
             margin-top: 30px;
         }
         .accept-container input {
-            padding: 10px 20px;
             font-size: 1.2em;
             border: 2px solid #ddd;
             border-radius: 8px;
             width: 250px;
         }
         .accept-container button {
-            padding: 10px 30px;
+            padding: 12px 30px;
             font-size: 1.2em;
             background-color: #6a4c9c;
             color: white;
@@ -108,30 +163,78 @@
             padding: 20px 0;
             text-align: center;
             font-size: 1em;
+            margin-top: 40px;
         }
         footer a {
             color: #fff;
             text-decoration: underline;
         }
+        .highlight-text {
+            color: #6a4c9c;
+            font-weight: bold;
+        }
+        .service-boxes {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .service-box {
+            background-color: #fff;
+            padding: 30px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 28%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+        .service-box h3 {
+            color: #6a4c9c;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .service-box p {
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .checkbox-label {
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>StreamSync</h1>
-        <p>Automação para sua conta Telegram</p>
+        <h1>StreamSyncBot</h1>
+        <p>Automação inteligente para sua conta Telegram</p>
     </header>
 
     <section>
+        <div class="intro-text">
+            <h2>Transforme sua interação com o Telegram!</h2>
+            <p>Com o <strong>StreamSyncBot</strong>, você automatiza e otimiza suas tarefas no Telegram de maneira simples e eficaz. Não perca tempo, deixe a automação cuidar do resto!</p>
+        </div>
+
         <div class="terms">
             <h2>📄 TERMOS DE USO E ISENÇÃO DE RESPONSABILIDADE</h2>
-            <p><strong>Última atualização:</strong> 02 de maio de 2025</p>
 
             <ol>
-                <li><strong>Aceitação dos Termos:</strong> Ao utilizar este software (“Aplicativo”), o usuário declara que leu, compreendeu e aceitou integralmente estes Termos de Uso e a Declaração de Responsabilidade. Caso não concorde, não utilize o Aplicativo.</li>
+                <li><strong>Aceitação dos Termos:</strong> Ao utilizar este software (“StreamSyncBot”), o usuário declara que leu, compreendeu e aceitou integralmente estes Termos de Uso e a Declaração de Responsabilidade. Caso não concorde, não utilize o Aplicativo.</li>
                 <li><strong>Natureza do Aplicativo:</strong> O Aplicativo é uma ferramenta de automação desenvolvida para interação com a conta do Telegram do próprio usuário. O desenvolvedor não possui qualquer afiliação, vínculo ou aprovação oficial do Telegram™.</li>
-                <li><strong>Responsabilidade do Usuário:</strong> O uso do Aplicativo é de inteira e exclusiva responsabilidade do usuário. O usuário deve utilizar sua própria conta do Telegram, de forma ética e em conformidade com os Termos de Serviço do Telegram (https://telegram.org/tos). O desenvolvedor não se responsabiliza por suspensão, banimento ou qualquer sanção aplicada pelo Telegram ou por terceiros devido ao uso do Aplicativo.</li>
+                <li><strong>Responsabilidade do Usuário:</strong> O uso do Aplicativo é de inteira e exclusiva responsabilidade do usuário. O usuário deve utilizar sua própria conta do Telegram, de forma ética e em conformidade com os <a href="https://telegram.org/tos" target="_blank" style="color: #6a4c9c; text-decoration: underline; font-weight: bold;">
+                    Termos de Serviço do Telegram
+                  </a>. O desenvolvedor não se responsabiliza por suspensão, banimento ou qualquer sanção aplicada pelo Telegram ou por terceiros devido ao uso do Aplicativo.</li>
                 <li><strong>Proibições de Uso:</strong> O Aplicativo não deve ser utilizado para:
                     <ul>
                         <li>Envio de spam, phishing ou mensagens em massa não solicitadas.</li>
@@ -149,39 +252,100 @@
                 <li><strong>Licença de Uso:</strong> Ao adquirir uma key de ativação, o usuário está obtendo uma licença temporária e não exclusiva de uso do Aplicativo. Esta licença pode ser revogada a qualquer momento, em caso de uso indevido ou violação destes Termos.</li>
                 <li><strong>Privacidade:</strong> O Aplicativo pode armazenar localmente configurações definidas pelo próprio usuário. Nenhuma informação pessoal ou dados da conta do Telegram são coletados pelo desenvolvedor.</li>
                 <li><strong>Modificações:</strong> Estes Termos podem ser alterados a qualquer momento. A versão atualizada estará disponível no mesmo local da distribuição do software.</li>
-                <li><strong>Contato:</strong> Para dúvidas ou suporte, entre em contato pelo e-mail: <strong>streamsyncbot@gmail.com</strong> ou pelo Telegram: <strong>@StreamSyncBot</strong>.</li>
+                <li><strong>Contato:</strong> Para dúvidas ou suporte, entre em contato pelo e-mail: streamsyncbot@gmail.com</li>
             </ol>
         </div>
 
-        <div class="button-container">
-            <p><strong>Escolha o plano de pagamento:</strong></p>
-            <a href="https://www.exemplo.com/pix/24.90" target="_blank">Plano Mensal (R$24,90)</a>
-            <a href="https://www.exemplo.com/pix/69.90" target="_blank">Plano Trimestral (R$69,90)</a>
-        </div>
+        <div style="text-align: center; margin: 2rem;">
+            <a href="https://drive.google.com/drive/folders/15lTTNK9CCShj0QNdrCOM-saWlDuRfQzz?usp=drive_link" download style="text-decoration: none;">
+              <button style="
+                background-color: #6f42c1;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+              "
+              onmouseover="this.style.backgroundColor='#5936a6'"
+              onmouseout="this.style.backgroundColor='#6f42c1'"
+              >
+                📦 Baixar o Bot StreamSync
+              </button>
+            </a>
+          </div>
+          
+
+        <div style="background-color: #fff3cd; border: 1px solid #ffeeba; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; color: #856404; font-family: Arial, sans-serif; font-size: 1rem;">
+            <strong>Atenção:</strong> Leia com atenção as informações abaixo antes de efetuar o pagamento:
+          
+            <ol style="margin-top: 1rem; padding-left: 1.2rem;">
+              <li style="margin-bottom: 0.8rem;">
+                Você pode solicitar uma <strong>key de teste gratuita de 1 dia</strong> enviando um e-mail para 
+                <a href="mailto:streamsyncbot@gmail.com">streamsyncbot@gmail.com</a>. Responderemos com sua key de teste.
+              </li>
+              <li style="margin-bottom: 0.8rem;">
+                É possível solicitar o <strong>reembolso da compra em até 3 dias úteis</strong> após a data de pagamento. Para isso, envie o <strong>comprovante de pagamento</strong> e os <strong>dados bancários ou chave Pix</strong> para o mesmo e-mail.
+              </li>
+              <li style="margin-bottom: 0.8rem;">
+                Caso o pagamento seja realizado <strong>logado em sua conta Mercado Pago</strong>, a chave será gerada automaticamente e enviada para o <strong>e-mail cadastrado</strong> na conta. 
+                Caso contrário, envie o comprovante de pagamento para <a href="mailto:streamsyncbot@gmail.com">streamsyncbot@gmail.com</a> e sua chave será enviada manualmente.
+              </li>
+            </ol>
+          
+            <p style="margin-top: 1rem;">
+              <strong>Importante:</strong> Todas as interações realizadas via e-mail serão respondidas em até <strong>2 dias úteis</strong>. Agradecemos sua compreensão.
+            </p>
+          </div>
+          
 
         <div class="accept-container">
-            <p><strong>Digite "EU ACEITO" para continuar:</strong></p>
-            <input type="text" id="acceptInput" placeholder="Digite 'EU ACEITO'">
-            <button onclick="checkAcceptance()">Continuar</button>
+            <label class="checkbox-label">
+                <input type="checkbox" id="accept_terms">
+                Aceito os Termos de Uso e Declaração de Responsabilidade
+            </label>
+            <br>
+            <button onclick="enableButtons()">Aceitar e Continuar</button>
         </div>
-    </section>
+        
 
-    <footer>
-        <p>&copy; 2025 StreamSync. Todos os direitos reservados.</p>
-        <p>Para mais informações, consulte nossa <a href="#">Política de Privacidade</a> e <a href="#">Termos de Serviço</a>.</p>
-    </footer>
+        <div class="button-container">
+            <button id="button-monthly" onclick="window.open('https://mpago.la/1EFyxSs', '_blank')" disabled>📅 Plano Mensal - R$29,90</button>
+            <button id="button-quarterly" onclick="window.open('https://mpago.la/1XKWeax', '_blank')" disabled>🎉 Plano Trimestral - R$79,90</button>
+        </div>
 
-    <script>
-        function checkAcceptance() {
-            var userInput = document.getElementById('acceptInput').value;
-            if(userInput.toUpperCase() === 'EU ACEITO') {
-                alert("Você aceitou os Termos de Uso! Redirecionando para o pagamento...");
-                window.location.href = 'https://www.exemplo.com/pix/24.90'; // Redireciona ao link de pagamento
-            } else {
-                alert("Você precisa aceitar os Termos de Uso para continuar.");
-            }
-        }
-    </script>
-
-</body>
-</html>
+        <div class="service-boxes">
+            <div class="service-box">
+                <h3>🎯 Automação Inteligente</h3>
+                <p>Defina seus parâmetros e deixe o bot fazer o trabalho por você. Simplifique suas ações no Telegram!</p>
+                </div>
+                <div class="service-box">
+                <h3>⚙️ Fácil Configuração</h3>
+                <p>Sem complicações! Configure o StreamSyncBot rapidamente e esteja pronto para usar em minutos.</p>
+                </div>
+                <div class="service-box">
+                <h3>🚀 Suporte Rápido</h3>
+                <p>Precisa de ajuda? Conte com nosso suporte via email streamsyncbot@gmail.com para garantir seu sucesso.</p>
+                </div>
+                </div>
+                </section>
+                <footer>
+                    © 2025 StreamSync. Todos os direitos reservados.
+                </footer>
+                
+                <script>
+                    function enableButtons() {
+                        const checkbox = document.getElementById("accept_terms");
+                        const buttonMonthly = document.getElementById("button-monthly");
+                        const buttonQuarterly = document.getElementById("button-quarterly");
+                        if (checkbox.checked) {
+                            buttonMonthly.disabled = false;
+                            buttonQuarterly.disabled = false;
+                        } else {
+                            buttonMonthly.disabled = true;
+                            buttonQuarterly.disabled = true;
+                        }
+                    }
+                </script>
+</body> </html>                
