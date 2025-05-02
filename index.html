@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamSync - Termos de Uso e Pagamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6a4c9c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .terms {
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .terms h2 {
+            font-size: 1.5em;
+            color: #6a4c9c;
+        }
+        .terms p {
+            margin-bottom: 10px;
+        }
+        .terms ol {
+            padding-left: 20px;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button-container a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #6a4c9c;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
+        .button-container a:hover {
+            background-color: #5a3e8a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>StreamSync - Termos de Uso e Pagamento</h1>
+    </header>
+
+    <section>
+        <div class="terms">
+            <h2>📄 TERMOS DE USO E ISENÇÃO DE RESPONSABILIDADE</h2>
+            <p><strong>Última atualização:</strong> 02 de maio de 2025</p>
+
+            <ol>
+                <li><strong>Aceitação dos Termos:</strong> Ao utilizar este software (“Aplicativo”), o usuário declara que leu, compreendeu e aceitou integralmente estes Termos de Uso e a Declaração de Responsabilidade. Caso não concorde, não utilize o Aplicativo.</li>
+                <li><strong>Natureza do Aplicativo:</strong> O Aplicativo é uma ferramenta de automação desenvolvida para interação com a conta do Telegram do próprio usuário. O desenvolvedor não possui qualquer afiliação, vínculo ou aprovação oficial do Telegram™.</li>
+                <li><strong>Responsabilidade do Usuário:</strong> O uso do Aplicativo é de inteira e exclusiva responsabilidade do usuário. O usuário deve utilizar sua própria conta do Telegram, de forma ética e em conformidade com os Termos de Serviço do Telegram (https://telegram.org/tos). O desenvolvedor não se responsabiliza por suspensão, banimento ou qualquer sanção aplicada pelo Telegram ou por terceiros devido ao uso do Aplicativo.</li>
+                <li><strong>Proibições de Uso:</strong> O Aplicativo não deve ser utilizado para:
+                    <ul>
+                        <li>Envio de spam, phishing ou mensagens em massa não solicitadas.</li>
+                        <li>Ações que infrinjam leis, regulamentos ou os Termos de Serviço do Telegram.</li>
+                        <li>Controle ou acesso não autorizado a contas de terceiros.</li>
+                    </ul>
+                </li>
+                <li><strong>Riscos e Avisos:</strong> O usuário está ciente de que:
+                    <ul>
+                        <li>O uso de ferramentas de automação pode violar os termos do Telegram e resultar na suspensão ou bloqueio de sua conta.</li>
+                        <li>O desenvolvedor não garante funcionamento contínuo, sem erros ou falhas.</li>
+                        <li>O Aplicativo é fornecido “NO ESTADO EM QUE SE ENCONTRA”, sem garantias de qualquer tipo.</li>
+                    </ul>
+                </li>
+                <li><strong>Licença de Uso:</strong> Ao adquirir uma key de ativação, o usuário está obtendo uma licença temporária e não exclusiva de uso do Aplicativo. Esta licença pode ser revogada a qualquer momento, em caso de uso indevido ou violação destes Termos.</li>
+                <li><strong>Privacidade:</strong> O Aplicativo pode armazenar localmente configurações definidas pelo próprio usuário. Nenhuma informação pessoal ou dados da conta do Telegram são coletados pelo desenvolvedor.</li>
+                <li><strong>Modificações:</strong> Estes Termos podem ser alterados a qualquer momento. A versão atualizada estará disponível no mesmo local da distribuição do software.</li>
+                <li><strong>Contato:</strong> Para dúvidas ou suporte, entre em contato pelo e-mail: <strong>streamsyncbot@gmail.com</strong> ou pelo Telegram: <strong>@StreamSyncBot</strong>.</li>
+            </ol>
+        </div>
+
+        <div class="button-container">
+            <p><strong>Escolha o plano de pagamento:</strong></p>
+            <a href="https://www.exemplo.com/pix/24.90" target="_blank">Plano Mensal (R$24,90)</a>
+            <a href="https://www.exemplo.com/pix/69.90" target="_blank">Plano Trimestral (R$69,90)</a>
+        </div>
+
+        <div class="button-container">
+            <p><strong>Digite "EU ACEITO" para continuar:</strong></p>
+            <input type="text" id="acceptInput" placeholder="Digite 'EU ACEITO'">
+            <button onclick="checkAcceptance()">Continuar</button>
+        </div>
+    </section>
+
+    <script>
+        function checkAcceptance() {
+            var userInput = document.getElementById('acceptInput').value;
+            if(userInput.toUpperCase() === 'EU ACEITO') {
+                alert("Você aceitou os Termos de Uso! Redirecionando para o pagamento...");
+                window.location.href = 'https://www.exemplo.com/pix/24.90'; // Redireciona ao link de pagamento
+            } else {
+                alert("Você precisa aceitar os Termos de Uso para continuar.");
+            }
+        }
+    </script>
+
+</body>
+</html>
